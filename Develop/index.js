@@ -1,5 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer')
+const fs = require('fs')
+const generateMarkdown = require('./utils/generateMarkdown.js')
 
 
 // TODO: Create an array of questions for user input
@@ -87,13 +89,13 @@ const questions = [
     },
     {
         type: 'confirm',
-        name: 'confirmTestInstruction',
+        name: 'confirmTestInstructions',
         message: 'Would you like to add test instructions?',
         default: true
     },
     {
         type: 'input',
-        name: 'testInstructions',
+        name: 'tests',
         message: 'Describe the test instructions for this project:',
         when:({ confirmTestInstructions }) => {
             if(confirmTestInstructions) {
@@ -107,13 +109,13 @@ const questions = [
         type: 'checkbox',
         name: 'license',
         message: 'Choose license:',
-        choices: ['BSD (open source, does not req distribution)', 'MIT (allows commerical use', 'GPL (req open source)']
+        choices: ['Apache', 'MIT', 'GPL']
     },
     {
         type: 'checkbox',
         name: 'technologies',
         message: 'Choose technologies used:',
-        choices: ['HTML5','CSS3','javaScript', 'jquery', 'bootstrap', 'Node.js', 'npm', 'jest', 'React']
+        choices: ['HTML5','CSS','javaScript', 'jquery', 'bootstrap', 'Node.js', 'npm', 'jest', 'React']
     },
     {
         type: 'input',
@@ -147,21 +149,54 @@ const questions = [
 ]
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+const writeFile = (fileName, fileContent) => {
+  return new Promise((resolve, reject) => {
+      fs.writeFile('./readme.md', fileContent, err => {
+          if (err) {
+              reject(err)
+              return
+          } 
+          resolve({
+              ok: true,
+              message: 'File created!'
+          })
+      })
+  })
+}
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions)
-    .then((answers)=> {
-            // what to do with the data
-            console.table(answers)
-        }) .catch ((err) => {
-            if (err) {
-                console.log(err)
-                throw err
-            }
+
+    promptUser = data => {
+        console.log(`
+        ===================
+        create a New readme
+        ===================
+        `)
+        return inquirer.prompt(questions)
+        .then(readmeData=> {
+                // what to do with the data
+            return readmeData
+            }) .catch ((err) => {
+                if (err) {
+                    console.log(err)
+                    throw err
+                }
         })
+
+    }
+    promptUser()
+        .then (readmeData => {
+            writeFile(readmeData.title, generateMarkdown(readmeData))
+        })
+        
+        // .then(readmeData, readmeDataArr => {
+        //     console.log(readmeData)
+        // //     return writeToFile(readmeDataArr.title, readmeDataArr)
+        // //     console.log(writeFileResponse)
+        // })
 }
 
+
 // Function call to initialize app
-init();
+init()
