@@ -1,15 +1,19 @@
-# s
+# this shit
+  [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-  
-  [Description](##Description) *
+  ## TABLE OF CONTENTS
+
+  ---
+
+
+[Description](/Develop/utils/generateMarkdown/##Description) *
   [Installation](##Installation) *
   [Usage](##Usage) *
   [Contributions](##Contributions) *
   [Tests](##Tests) *
   [Questions](##questions) *
   
-  [License](##License) *
-  // [Technologies](##technologies)
+  [License](## License) *
   
   <br>
 
@@ -17,11 +21,17 @@
 
   ---
 
-  s
-  Deployment: (s)
-  Repo: (s)
+  its shit
+  <br>
+  Deployment: (shl.com)
+  <br>
+  Repo: (sdlf.com)
+
   ## Installation
-  s
+
+  ---
+  
+  shit
 
   <br>
 
@@ -29,7 +39,7 @@
 
   ---
 
-  s
+  shit
 
   <br>
 
@@ -37,7 +47,7 @@
 
   ---
 
-  undefined
+  shit
 
   <br>
 
@@ -45,7 +55,7 @@
 
   ---
 
-  undefined
+  shit
 
   <br>
 
@@ -53,7 +63,7 @@
 
   ---
 
-  For any further inquiries, please contact me via [gitHub](s) or email: s
+  For any further inquiries, please contact me via gitHub: [(shit)](https://github.com/undefined) or email: sthit@sls.com
 
   <br>
 
@@ -62,15 +72,9 @@
   ## License
 
   ---
-
-   
   <br>
-  [click her for more information about  license.]
+  [click her for more information about Apache license.](http://www.apache.org/licenses/LICENSE-2.0)
   
 
   <br>
-
-  ## Technologies
-
-  ---
-  // undefined
+  <br>

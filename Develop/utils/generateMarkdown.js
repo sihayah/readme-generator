@@ -20,7 +20,7 @@ function renderLicenseBadge (data) {
   else {
     licenseBadge = ''
   }
-  console.log(licenseBadge)
+  return licenseBadge
 }
 
 // TODO: Create a function that returns the license link
@@ -45,11 +45,9 @@ function renderLicenseLink (data) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection (data) {
-  renderLicenseBadge(data)
   renderLicenseLink(data)
-
-  console.log(licenseBadge, licenseLink)
-
+  renderLicenseBadge(data)
+  
   if (!data.license){
     return ''
   }
@@ -58,10 +56,8 @@ function renderLicenseSection (data) {
   ## License
 
   ---
-
-  ${licenseBadge} 
   <br>
-  [click her for more information about ${data.license} license.]${licenseLink}
+  [click here for more information about ${data.license} license.]${licenseLink}
   `
 }
 
@@ -70,7 +66,7 @@ function renderRelativeLicenseLink (data) {
     return ''
   }
   return `
-  [License](##License) \*`
+  [License](## License) \*`
 }
 
 
@@ -110,21 +106,28 @@ function renderTechnologyBadge(data) {
 function renderTechnologiesSection(data) {
     renderTechnologyBadge(data)
 }
+
+
+
 // TODO: Create a function to generate markdown for README
 
 function generateMarkdown(data) {
 
   return `# ${data.title}
+  ${renderLicenseBadge(data)}
 
-  
-  [Description](##Description) \*
+  ## TABLE OF CONTENTS
+
+  ---
+
+
+[Description](/Develop/utils/generateMarkdown/##Description) \*
   [Installation](##Installation) \*
   [Usage](##Usage) \*
   [Contributions](##Contributions) \*
   [Tests](##Tests) \*
   [Questions](##questions) \*
   ${renderRelativeLicenseLink(data)}
-  // [Technologies](##technologies)
   
   <br>
 
@@ -133,9 +136,15 @@ function generateMarkdown(data) {
   ---
 
   ${data.description}
+  <br>
   Deployment: (${data.deploymentLink})
+  <br>
   Repo: (${data.repoLink})
+
   ## Installation
+
+  ---
+  
   ${data.installation}
 
   <br>
@@ -168,7 +177,7 @@ function generateMarkdown(data) {
 
   ---
 
-  For any further inquiries, please contact me via [gitHub](${data.gitHub}) or email: ${data.email}
+  For any further inquiries, please contact me via gitHub: [(${data.gitHub})](https://github.com/${data.github}) or email: ${data.email}
 
   <br>
 
@@ -176,10 +185,6 @@ function generateMarkdown(data) {
 
   <br>
   <br>
-  ## Technologies
-
-  ---
-  // ${renderTechnologiesSection(data)}
 `;
 }
   

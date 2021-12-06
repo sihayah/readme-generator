@@ -111,12 +111,12 @@ const questions = [
         message: 'Choose license:',
         choices: ['Apache', 'MIT', 'GPL']
     },
-    {
-        type: 'checkbox',
-        name: 'technologies',
-        message: 'Choose technologies used:',
-        choices: ['HTML5','CSS','javaScript', 'jquery', 'bootstrap', 'Node.js', 'npm', 'jest', 'React']
-    },
+    // {
+    //     type: 'checkbox',
+    //     name: 'technologies',
+    //     message: 'Choose technologies used:',
+    //     choices: ['HTML5','CSS','javaScript', 'jquery', 'bootstrap', 'Node.js', 'npm', 'jest', 'React']
+    // },
     {
         type: 'input',
         name: 'gitHub',
@@ -188,6 +188,7 @@ function init() {
     promptUser()
         .then (readmeData => {
             writeFile(readmeData.title, generateMarkdown(readmeData))
+            console.log("Read me has been created.")
         })
         
         // .then(readmeData, readmeDataArr => {
