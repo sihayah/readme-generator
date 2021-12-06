@@ -1,4 +1,4 @@
-# this shit
+# Project X
   [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
   ## TABLE OF CONTENTS
@@ -12,8 +12,7 @@
   [Contributions](##Contributions) *
   [Tests](##Tests) *
   [Questions](##questions) *
-  
-  [License](## License) *
+  [License](##License)
   
   <br>
 
@@ -21,17 +20,17 @@
 
   ---
 
-  its shit
+  This is a description of Project X.
   <br>
-  Deployment: (shl.com)
+  Deployment: (projectx.com)
   <br>
-  Repo: (sdlf.com)
+  Repo: (xrepo.com)
 
   ## Installation
 
   ---
   
-  shit
+  This is how to install.
 
   <br>
 
@@ -39,7 +38,7 @@
 
   ---
 
-  shit
+  This is how to use.
 
   <br>
 
@@ -47,7 +46,7 @@
 
   ---
 
-  shit
+  Contributions welcome
 
   <br>
 
@@ -55,7 +54,7 @@
 
   ---
 
-  shit
+  This is how to test
 
   <br>
 
@@ -63,7 +62,7 @@
 
   ---
 
-  For any further inquiries, please contact me via gitHub: [(shit)](https://github.com/undefined) or email: sthit@sls.com
+  For any further inquiries, please contact me via gitHub: [(sihayah)](https://github.com/undefined) or email: sihaya_a@hotmail.com
 
   <br>
 
@@ -73,7 +72,8 @@
 
   ---
   <br>
-  [click her for more information about Apache license.](http://www.apache.org/licenses/LICENSE-2.0)
+  
+  [click here for more information about Apache license.](http://www.apache.org/licenses/LICENSE-2.0)
   
 
   <br>

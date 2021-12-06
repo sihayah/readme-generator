@@ -27,14 +27,14 @@ function renderLicenseBadge (data) {
 // If there is no license, return an empty string
 function renderLicenseLink (data) {
   if (data.license == 'MIT'){
-    licenseLink = `(https://opensource.org/licenses/MIT)`
+    licenseLink = `https://opensource.org/licenses/MIT`
   }
   else if (data.license == 'Apache') {
-    licenseLink = `(http://www.apache.org/licenses/LICENSE-2.0)`
+    licenseLink = `http://www.apache.org/licenses/LICENSE-2.0`
   }
 
   else if (data.license == 'GPL'){
-  licenseLink = `(https://www.gnu.org/licenses/gpl-3.0.en.html)`
+  licenseLink = `https://www.gnu.org/licenses/gpl-3.0.en.html`
 }
   else {
     licenseLink = ''
@@ -57,7 +57,8 @@ function renderLicenseSection (data) {
 
   ---
   <br>
-  [click here for more information about ${data.license} license.]${licenseLink}
+  
+  [click here for more information about ${data.license} license.](${licenseLink})
   `
 }
 
@@ -65,8 +66,7 @@ function renderRelativeLicenseLink (data) {
   if (!data.license) {
     return ''
   }
-  return `
-  [License](## License) \*`
+  return `[License](##License)`
 }
 
 
