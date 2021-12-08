@@ -54,6 +54,7 @@ const questions = [
     {
         type: 'input',
         name: 'usage',
+        message: 'Describe usage:',
         validate: usageInput => {
             if (usageInput) {
                 return true

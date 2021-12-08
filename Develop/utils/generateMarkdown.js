@@ -86,31 +86,31 @@ function renderRelativeLicenseLink (data) {
 // function to return technology badges based on user selection
 function renderTechnologyBadge(data) {
   if(data.technologies.includes('HTML5')) {
-    technologiesBadges.push(`![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) `)
+    technologiesBadges.push(` ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) `)
   }
   if(data.technologies.includes('CSS')) {
-    technologiesBadges.push(`![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) `)
+    technologiesBadges.push(` ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) `)
   }
   if (data.technologies.includes('javaScript')) {
-    technologiesBadges.push((`![javaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) `))
+    technologiesBadges.push(` ![javaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) `)
   }
   if (data.technologies.includes('jquery')){
-    technologiesBadges.push(`![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white) `)
+    technologiesBadges.push(` ![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white) `)
   }
   if (data.technologies.includes('bootstrap')){
-    technologiesBadges.push(`![bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white) `)
+    technologiesBadges.push(` ![bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white) `)
   }
   if (data.technologies.includes('Node.js')){
-    technologiesBadges.push(`![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) `)
+    technologiesBadges.push(` ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) `)
   }
   if (data.technologies.includes('NPM')){
-    technologiesBadges.push(`![NPM](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white) `)
+    technologiesBadges.push(` ![NPM](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white) `)
   }
   if (data.technologies.includes('Jest')){
-    technologiesBadges.push(`![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white) `)
+    technologiesBadges.push(` ![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white) `)
   }
   if (data.technologies.includes('React')){
-    technologiesBadges.push(`![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) `)
+    technologiesBadges.push(` ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) `)
   }
   return technologiesBadges.join(' ')
 }
