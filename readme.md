@@ -22,7 +22,7 @@
 
   <br>
 
-  ![Readme Generator landing]('readme-example.png')
+  <img src= 'images/readme-example.png'>
   
   <br>
 
@@ -52,11 +52,10 @@
 
   Example of terminal process: 
   <br>
-  
-  ![code snippet]('code-snippet.png')
+
+  <img src= 'images/code-snippet.png'>
 
   [Click for Demo]('https://youtu.be/8qKC0QrD6O4')
-
 
   <br>
 
