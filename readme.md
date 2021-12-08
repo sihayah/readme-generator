@@ -55,6 +55,8 @@
 
   <img src= 'images/code-snippet.png'>
 
+  <br>
+
   [Click for Demo]('https://youtu.be/8qKC0QrD6O4')
 
   <br>
