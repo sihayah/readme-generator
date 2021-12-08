@@ -15,10 +15,15 @@ const questions = [
             if (titleInput) {
                 return true
             } else {
-                console.log ('Pleaser enter the title of your project.')
+                console.log ('Please enter the title of your project.')
                 return false
             }
         }
+    },
+    {
+        type: 'input',
+        name: 'image',
+        message: 'Please enter link to project screenshot:'
     },
     {
         type: 'input',
@@ -28,79 +33,63 @@ const questions = [
             if (descriptionInput) {
                 return true
             } else {
-                console.log ('Pleaser enter a descritpion of your project.')
+                console.log ('Please enter a descritpion of your project.')
                 return false
             }
         }
-    },
-    {
-        type: 'confirm',
-        name: 'confirmInstallation',
-        message: 'Would you like to add installation instructions?',
-        default: true
     },
     {
         type: 'input',
         name: 'installation',
         message: 'Describe installation process:',
-        when:({ confirmInstallation }) => {
-            if(confirmInstallation) {
+        validate: installationInput => {
+            if (installationInput) {
                 return true
             } else {
+                console.log ('Please describe the installation of your project.')
                 return false
             }
         }
-    },
-    {
-        type: 'confirm',
-        name: 'confirmUsage',
-        message: 'Would you like to add usage information?',
-        default: true
     },
     {
         type: 'input',
         name: 'usage',
-        message: 'Describe the intended usage of this project:',
-        when:({ confirmUsage }) => {
-            if(confirmUsage) {
+        validate: usageInput => {
+            if (usageInput) {
                 return true
             } else {
+                console.log ('Please describe the intended usage of your project.')
                 return false
             }
         }
     },
     {
         type: 'confirm',
-        name: 'confirmContribution',
-        message: 'Would you like to add contribution guidelines?',
-        default: true
+        name: 'contribution',
+        message: 'Would you like others to contribute to this project?'
     },
     {
         type: 'input',
-        name: 'contribution',
+        name: 'contributionDescription',
         message: 'Describe the contribution guidelines for this project:',
-        when:({ confirmContribution }) => {
-            if(confirmContribution) {
+        validate: contributionInput => {
+            if (contributionInput) {
                 return true
             } else {
+                console.log ('Please describe the contribution guidelines of your project.')
                 return false
             }
         }
-    },
-    {
-        type: 'confirm',
-        name: 'confirmTestInstructions',
-        message: 'Would you like to add test instructions?',
-        default: true
     },
     {
         type: 'input',
         name: 'tests',
-        message: 'Describe the test instructions for this project:',
-        when:({ confirmTestInstructions }) => {
-            if(confirmTestInstructions) {
+        message: 'Describe how to run tests for this project:',
+        validate: testsInput => {
+            if (testsInput) {
                 return true
             } else {
+                console.log ('Please describe the test process for your project.')
                 return false
             }
         }
@@ -111,12 +100,12 @@ const questions = [
         message: 'Choose license:',
         choices: ['Apache', 'MIT', 'GPL']
     },
-    // {
-    //     type: 'checkbox',
-    //     name: 'technologies',
-    //     message: 'Choose technologies used:',
-    //     choices: ['HTML5','CSS','javaScript', 'jquery', 'bootstrap', 'Node.js', 'npm', 'jest', 'React']
-    // },
+    {
+        type: 'checkbox',
+        name: 'technologies',
+        message: 'Choose technologies used:',
+        choices: ['HTML5','CSS','javaScript', 'jquery', 'bootstrap', 'Node.js', 'npm', 'jest', 'React']
+    },
     {
         type: 'input',
         name: 'gitHub',
@@ -187,6 +176,7 @@ function init() {
     }
     promptUser()
         .then (readmeData => {
+            console.log(readmeData)
             writeFile(readmeData.title, generateMarkdown(readmeData))
             console.log("Read me has been created.")
         })

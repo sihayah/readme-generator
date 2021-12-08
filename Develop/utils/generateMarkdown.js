@@ -4,6 +4,20 @@ let licenseBadge
 let licenseLink
 let technologiesBadges = []
 
+// generate image markdown if user input image link
+function renderImage (data){
+  if (!data.image) {
+    return ``
+  }
+  return `![${data.title} landing](${data.image})`
+}
+// generate contribution badge based on user input
+function renderContributionBadge (data) {
+  if (!data.contribution == true) {
+    return ``
+  }
+  return `![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)`
+}
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge (data) {
@@ -56,7 +70,6 @@ function renderLicenseSection (data) {
   ## License
 
   ---
-  <br>
   
   [click here for more information about ${data.license} license.](${licenseLink})
   `
@@ -66,48 +79,41 @@ function renderRelativeLicenseLink (data) {
   if (!data.license) {
     return ''
   }
-  return `[License](##License)`
+  return `[License](#license)`
 }
 
 
 // function to return technology badges based on user selection
 function renderTechnologyBadge(data) {
-
-  if(data.technologies.indexOf('HTML5')) {
-    technologiesBadges.push(`[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)]`)
+  if(data.technologies.includes('HTML5')) {
+    technologiesBadges.push(`![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) `)
   }
-  if(data.technologies.indexOf('CSS')) {
-    technologiesBadges.push(`[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)]`)
+  if(data.technologies.includes('CSS')) {
+    technologiesBadges.push(`![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) `)
   }
-  if (data.technologies.indexOf('javaScript')) {
-    technologiesBadges.push((`[![javaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)]`))
+  if (data.technologies.includes('javaScript')) {
+    technologiesBadges.push((`![javaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) `))
   }
-  if (data.technologies.indexOf('jquery')){
-    technologiesBadges.push(`[![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)]`)
+  if (data.technologies.includes('jquery')){
+    technologiesBadges.push(`![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white) `)
   }
-  if (data.technologies.indexOf('bootstrap')){
-    technologiesBadges.push(`[![bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)]`)
+  if (data.technologies.includes('bootstrap')){
+    technologiesBadges.push(`![bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white) `)
   }
-  if (data.technologies.indexOf('Node.js')){
-    technologiesBadges.push(`[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)]`)
+  if (data.technologies.includes('Node.js')){
+    technologiesBadges.push(`![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) `)
   }
-  if (data.technologies.indexOf('NPM')){
-    technologiesBadges.push(`[![NPM](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)]`)
+  if (data.technologies.includes('NPM')){
+    technologiesBadges.push(`![NPM](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white) `)
   }
-  if (data.technologies.indexOf('Jest')){
-    technologiesBadges.push(`[![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)]`)
+  if (data.technologies.includes('Jest')){
+    technologiesBadges.push(`![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white) `)
   }
-  if (data.technologies.indexOf('React')){
-    technologiesBadges.push(`[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)]`)
+  if (data.technologies.includes('React')){
+    technologiesBadges.push(`![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) `)
   }
-  
+  return technologiesBadges.join(' ')
 }
-
-function renderTechnologiesSection(data) {
-    renderTechnologyBadge(data)
-}
-
-
 
 // TODO: Create a function to generate markdown for README
 
@@ -115,23 +121,31 @@ function generateMarkdown(data) {
 
   return `# ${data.title}
   ${renderLicenseBadge(data)}
+  ${renderContributionBadge(data)}
+  <br>
+  ${renderTechnologyBadge(data)}
+  <br>
 
   ## TABLE OF CONTENTS
 
   ---
 
 
-[Description](/Develop/utils/generateMarkdown/##Description) \*
-  [Installation](##Installation) \*
-  [Usage](##Usage) \*
-  [Contributions](##Contributions) \*
-  [Tests](##Tests) \*
-  [Questions](##questions) \*
+  [Description](#description) \*
+  [Installation](#installation) \*
+  [Usage](#usage) \*
+  [Contributions](#contributions) \*
+  [Tests](#tests) \*
+  [Questions](#questions) \*
   ${renderRelativeLicenseLink(data)}
+
+  <br>
+
+  ${renderImage(data)}
   
   <br>
 
-  ## Description 
+  ## Description
 
   ---
 
@@ -141,6 +155,8 @@ function generateMarkdown(data) {
   <br>
   Repo: (${data.repoLink})
 
+  
+
   ## Installation
 
   ---
@@ -149,7 +165,7 @@ function generateMarkdown(data) {
 
   <br>
 
-  ## Usage
+## Usage
 
   ---
 
@@ -161,7 +177,7 @@ function generateMarkdown(data) {
 
   ---
 
-  ${data.contribution}
+  ${data.contributionDescription}
 
   <br>
 
