@@ -193,7 +193,7 @@ function generateMarkdown(data) {
 
   ---
 
-  For any further inquiries, please contact me via gitHub: [(${data.gitHub})](https://github.com/${data.github}) or email: ${data.email}
+  For any further inquiries, please contact me via gitHub: [(${data.gitHub})](https://github.com/${data.gitHub}) or email: ${data.email}
 
   <br>
 

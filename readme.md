@@ -57,7 +57,7 @@
 
   <br>
 
-  Link to Demo: https://youtu.be/8qKC0QrD6O4
+  [Click for Demo](https://youtu.be/8qKC0QrD6O4)
 
   <br>
 
@@ -65,7 +65,7 @@
 
   ---
 
-  For any further inquiries, please contact me via gitHub: [(sihayah)](https://github.com/undefined) or email: sihaya_a@hotmail.com
+  For any further inquiries, please contact me via gitHub: [(sihayah)](https://github.com/sihayah) or email: sihaya_a@hotmail.com
 
   <br>
 
